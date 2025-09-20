@@ -18,4 +18,13 @@ else
   echo "export EDITOR=vim" >> ~/.bashrc
 fi
 
+USER_NAME=$(whoami)
+SUDOERS_FILE="/etc/sudoers.d/$USER_NAME-nopasswd"
+
+if ! sudo test -f "$SUDOERS_FILE"; then
+  echo "$USER_NAME ALL=(ALL) NOPASSWD: ALL" | sudo tee "$SUDOERS_FILE" > /dev/null
+  sudo chmod 440 "$SUDOERS_FILE"
+  echo "Passwordless sudo enabled for $USER_NAME"
+fi
+
 echo "fixed bash"
