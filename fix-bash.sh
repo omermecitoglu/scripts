@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # https://bash-prompt-generator.org
-NEW_PS1='\[\e[?12h\e[?25h\]\[\e[38;5;105m\]\u\[\e[0m\]@\[\e[38;5;193m\]\h\[\e[0m\] \[\e[38;5;221;2m\]#\[\e[0m\] \[\e[38;5;213m\]\w\[\e[0m\] \[\e[38;5;214m\]\$\[\e[0m\] '
+NEW_PS1='\[\e[?12h\e[?25h\]\[\e[38;5;105m\]\u\[\e[0m\]@\[\e[38;5;193m\]\h\[\e[0m\] • \[\e[38;5;213m\]\w\[\e[0m\] \[\e[38;5;214m\]\$\[\e[0m\] '
 
 # If PS1 already exists in ~/.bashrc, replace it. Otherwise, append.
 if grep -q "^PS1=" ~/.bashrc; then
