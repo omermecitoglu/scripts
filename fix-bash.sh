@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! grep -q "set completion-ignore-case on" ~/.inputrc 2>/dev/null; then
+  echo "set completion-ignore-case on" >> ~/.inputrc
+  echo "Case-insensitive tab completion enabled"
+fi
+
 # https://bash-prompt-generator.org
 NEW_PS1='\[\e[?12h\e[?25h\]\[\e[38;5;105m\]\u\[\e[0m\]@\[\e[38;5;193m\]\h\[\e[0m\] • \[\e[38;5;213m\]\w\[\e[0m\] \[\e[38;5;214m\]\$\[\e[0m\] '
 
